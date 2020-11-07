@@ -1,0 +1,3 @@
+$(function () {
+    $("form#login").validate();
+});
