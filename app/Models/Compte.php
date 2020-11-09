@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Compte extends Model
 {
-    use SoftDeletes;
+  use SoftDeletes;
   protected $table="comptes";
   protected $fillable=['id','nom_compte','type_compte','numero_compte','nom_banque','proprietaire_id','created_at','updated_at'];
 

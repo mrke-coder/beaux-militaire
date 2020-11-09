@@ -98,7 +98,14 @@ class PropietaireController extends Controller
 
     public function destroy(int $id)
     {
-        return response()->json(Proprietaire::find($id));
+        $prop = Proprietaire::find($id);
+
+        if ($prop->delete()) {
+
+            return response()->json("Suppression effectuée avec succès");
+
+        }
+
     }
 
     public function infos(int $id)

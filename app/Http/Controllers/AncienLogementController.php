@@ -90,7 +90,7 @@ class AncienLogementController extends Controller
     {
        $ancienL = AncienLogement::find($id);
        if ($ancienL->delete()){
-           return response()->json('Deleted Ok');
+           return response()->json("Suppression effectuée avec succès");
        }
     }
 }

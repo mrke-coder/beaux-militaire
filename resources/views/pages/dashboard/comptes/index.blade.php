@@ -156,7 +156,9 @@
                 let id = $(this).data('id');
                 if(confirm("Êtes-vous sûr de vouloir supprimer ce compte ?")){
                     $.get('/dashboard/comptes/'+id+'/delete', function (data) {
-                        console.log(data)
+                        const cmpTable = $("#compte_dataTable").dataTable();
+                        cmpTable.fnDraw(false);
+                        toastr.success(data, "SUPPRESSION REUSSIE");
                     })
                 }
             });

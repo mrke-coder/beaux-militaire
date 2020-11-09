@@ -190,7 +190,9 @@
                     const id_ = $(this).data('id');
                     $.get('/dashboard/logements/'+id_+'/delete', function (data) {
                         console.log(data);
-                        toastr.success("Suppression effectuée avec succès","SUPPRESSION");
+                        toastr.success("Suppression effectuée avec succès","SUPPRESSION REUSSIE");
+                        const LTable = $("#logement_dataTable").dataTable();
+                        LTable.fnDraw(false);
                     });
                 }
             });

@@ -73,9 +73,13 @@ class CompteController extends Controller
         return response()->json(Compte::find($id));
    }
 
-    public function delete(int $id)
+    public function destroy(int $id)
     {
-       return response()->json(Compte::find($id));
+       $compt = Compte::find($id);
+
+        if ($compt->delete()){
+            return response()->json("Suppression effectuée avec succès");
+        }
    }
 
     public function infos(int $id)

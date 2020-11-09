@@ -67,6 +67,12 @@ class TypeLogementController extends Controller
 
     public function destroy(int $id)
     {
-        return response()->json(TypeLogement::find($id));
+        $typL = TypeLogement::find($id);
+
+        if ($typL->delete()) {
+            return response()->json("Suppression effectuée avec succès");
+        } else{
+            return response()->json("Erreur serveur, veillez rééssayer", 500);
+        }
    }
 }

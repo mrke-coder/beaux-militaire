@@ -150,7 +150,9 @@
                 if(confirm("Êtes-vous sûr de vouloir supprimer cet ancien logement ?")){
                     const id = $(this).data('id');
                     $.get('/dashboard/anciens_logements/'+id+'/delete',function (data) {
-                        console.log(data);
+                        const AlTable = $("#ancienLogement_dataTable").dataTable();
+                        AlTable.fnDraw(false);
+                        toastr.success(data, "SUPPRESSION REUSSIE")
                     })
                 }
             });

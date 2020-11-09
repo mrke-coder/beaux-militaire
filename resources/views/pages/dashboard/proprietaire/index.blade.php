@@ -187,7 +187,9 @@
                 let id = $(this).data('id');
                 if(confirm("Êtes-vous sûr de vouloir supprimer ce propriétaire")){
                     $.get('/dashboard/proprietaires/'+id+'/delete', function (data) {
-                        console.log(data);
+                        const PTable = $("#proprietaire_dataTable").dataTable();
+                        PTable.fnDraw(false);
+                        toastr.success(data, "SUPPRESSION REUSSIE");
                     });
                 }
             });

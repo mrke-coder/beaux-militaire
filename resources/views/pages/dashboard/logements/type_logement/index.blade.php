@@ -124,7 +124,9 @@
                 let _id = $(this).data('id');
                 if (confirm("Êtes-vous sûr de vouloir supprimer ce type de logement ?")){
                     $.get('/dashboard/type-de-logemets/'+_id+'/delete', function (data) {
-                        console.log(data)
+                        toastr.success(data, "SUPPRESSION REUSSIE");
+                        const TpTable = $("#typeDeLogement_dataTable").dataTable();
+                        TpTable.fnDraw(false);
                     });
                 }
             });

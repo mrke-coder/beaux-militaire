@@ -80,6 +80,6 @@ class EmplacementController extends Controller
            return response()->json('Désoleé, il y a des aniciens logements situés à cet emplacement donc impossible de le supprimer');
        }
        $emplacement->delete();
-       return response()->json();
+       return response()->json("Suppression effectuée avec succès");
     }
 }

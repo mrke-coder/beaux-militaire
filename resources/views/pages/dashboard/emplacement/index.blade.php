@@ -109,7 +109,9 @@
                 let id = $(this).data('id');
                 if(confirm("Êtes-vous sûr de vouloir supprimer cet emplacement")){
                    $.get('/dashboard/emplacements/'+id+'/delete', function (data) {
-                       console.log(data)
+                       const empTable = $("#emplacement_dataTable").dataTable();
+                       empTable.fnDraw(false);
+                       toastr.success(data, "SUPPRESSION REUSSIE");
                    })
                 }
             });

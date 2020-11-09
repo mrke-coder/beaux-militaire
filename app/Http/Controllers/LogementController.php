@@ -112,6 +112,12 @@ class LogementController extends Controller
 
     public function destroy(int $id)
     {
-       return response()->json(Logement::find($id));
+       $log = Logement::find($id);
+
+        if ($log->delete()) {
+            return response()->json("Suppression effectuée avec succès");
+        } else{
+            return response()->json("Erreur serveur, veillez rééssayer", 500);
+        }
     }
 }

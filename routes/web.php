@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/logements','LogementController@index')->name('logement.home');
         Route::post('/logements','LogementController@store')->name('logement.store');
         Route::get('/logements/{id}','LogementController@show')->name('logement.edit');
-        Route::get('/logement/{id}/delete','LogementController@destroy')->name('logement.delete');
+        Route::get('/logements/{id}/delete','LogementController@destroy')->name('logement.delete');
         Route::get('/logement/{id}/informations','LogementController@informations')->name('logement.infos');
 
         // Anciens Logements routes
@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/proprietaires','PropietaireController@index')->name('proprio.home');
         Route::post('/proprietaires','PropietaireController@store')->name('proprio.store');
         Route::get('/proprietaires/{id}','PropietaireController@show')->name('proprio.show');
-        Route::delete('/proprietaires/{id}/delete','PropietaireController@destroy')->name('proprio.delete');
+        Route::get('/proprietaires/{id}/delete','PropietaireController@destroy')->name('proprio.delete');
         Route::get('/proprietaires/{id}/informations', 'PropietaireController@infos');
 
         // Compte routes
